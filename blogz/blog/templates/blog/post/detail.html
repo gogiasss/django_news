@@ -2,14 +2,25 @@
   
 {% block title %}{{ post.title }}{% endblock %}  
   
-{% block content %}  
+{% block content %}
+
+
+
+<div class="card" style="width: 50%;">
+  <div class="card-body">
+    
+ 
+
   <h1>{{ post.title }}</h1>  
   <p class="date">  
     Published {{ post.publish }} by {{ post.author }}  
   </p>  
   {{ post.body|linebreaks }}
+  <a class="btn btn-primary" href="javascript:history.back()" role="button">Back</a>
+  </div>
+</div>
 
-  <a href="javascript:history.back()">Вернуться назад</a>
+ 
 {% endblock %}
 
 
