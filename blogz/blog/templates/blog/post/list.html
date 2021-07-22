@@ -1,9 +1,17 @@
 {% extends "blog/base.html" %}  
   
-{% block title %}My Blog{% endblock %}  
+{% block title %}Test work{% endblock %}  
   
 {% block content %}  
-  <h1>News list</h1>  
+  <div class="container-fluid">
+  <div class="card-body">
+    
+ <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    
+  </ol>
+</nav> 
   {% for post in posts %}
 
 <div class="card">
