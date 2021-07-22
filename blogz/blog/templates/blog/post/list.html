@@ -4,7 +4,21 @@
   
 {% block content %}  
   <h1>News list</h1>  
-  {% for post in posts %}  
+  {% for post in posts %}
+
+<div class="card">
+  <div class="card-header">
+   Published {{ post.publish }} by {{ post.author }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> {{ post.title }}  </h5>
+    <p class="card-text">{{ post.body|truncatewords:50|linebreaks }} </p>
+    <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Continue reading</a>
+  </div>
+</div>
+
+
+<!--
     <h2>  
       <a href="{{ post.get_absolute_url }}">  
        {{ post.title }}  
@@ -13,7 +27,7 @@
     <p class="date">  
       Published {{ post.publish }} by {{ post.author }}  
     </p>  
-    {{ post.body|truncatewords:30|linebreaks }}  
+    {{ post.body|truncatewords:30|linebreaks }}  -->
   {% endfor %}
   {% include "../pagination.html" with page=posts %}   
 {% endblock %}
